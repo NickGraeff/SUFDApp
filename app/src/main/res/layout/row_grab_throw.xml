@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="grab_throw"
+            type="com.nicksnacs.smashultimateframedata.db.GrabThrow"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/move_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.moveName}"
+            tools:text="MoveName"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/move_startup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.startup}"
+            tools:text="X Frame Startup"
+            android:textSize="16sp"
+            android:background="#00FF00"
+            android:visibility="@{grab_throw.startup == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <ImageView
+            android:id="@+id/move_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/giphy"
+            />
+
+        <TextView
+            android:id="@+id/move_total_frames"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.totalFrames}"
+            tools:text="X Total Frames"
+            android:textSize="16sp"
+            android:visibility="@{grab_throw.totalFrames == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_landing_lag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.landingLag}"
+            tools:text="X Frames Landing Lag"
+            android:textSize="16sp"
+            android:visibility="@{grab_throw.landingLag == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_notes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.notes}"
+            tools:text="Note: X"
+            android:textSize="16sp"
+            android:visibility="@{grab_throw.notes == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_base_damage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{grab_throw.baseDamage}"
+            tools:text="X% Base Damage"
+            android:textSize="16sp"
+            android:visibility="@{grab_throw.baseDamage == null ? View.GONE : View.VISIBLE}"
+            />
+    </LinearLayout>
+
+</layout>

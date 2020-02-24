@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="dodge_roll"
+            type="com.nicksnacs.smashultimateframedata.db.DodgeRoll"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/move_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dodge_roll.moveName}"
+            tools:text="MoveName"
+            android:textSize="20sp"
+            />
+
+        <ImageView
+            android:id="@+id/move_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/giphy"
+            />
+
+        <TextView
+            android:id="@+id/move_total_frames"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dodge_roll.totalFrames}"
+            tools:text="X Total Frames"
+            android:textSize="16sp"
+            android:visibility="@{dodge_roll.totalFrames == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_landing_lag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dodge_roll.landingLag}"
+            tools:text="X Frames Landing Lag"
+            android:textSize="16sp"
+            android:visibility="@{dodge_roll.landingLag == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_notes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dodge_roll.notes}"
+            tools:text="Note: X"
+            android:textSize="16sp"
+            android:visibility="@{dodge_roll.notes == null ? View.GONE : View.VISIBLE}"
+            />
+    </LinearLayout>
+
+</layout>

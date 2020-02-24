@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="attack"
+            type="com.nicksnacs.smashultimateframedata.db.Attack"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/move_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.moveName}"
+            tools:text="MoveName"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/move_startup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.startup}"
+            tools:text="X Frame Startup"
+            android:textSize="16sp"
+            android:background="#00FF00"
+            android:visibility="@{attack.startup == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_advantage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.advantage}"
+            tools:text="-X On Shield"
+            android:textSize="16sp"
+            android:background="#FF0000"
+            android:visibility="@{attack.advantage == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_active"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.activeFrames}"
+            tools:text="Active on X-Y"
+            android:textSize="16sp"
+            android:background="#0000FF"
+            android:visibility="@{attack.activeFrames == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <ImageView
+            android:id="@+id/move_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/ic_launcher_background"
+            android:visibility="@{attack.hitboxImageUrl == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_total_frames"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.totalFrames}"
+            tools:text="X Total Frames"
+            android:textSize="16sp"
+            android:visibility="@{attack.totalFrames == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_landing_lag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.landingLag}"
+            tools:text="X Frames Landing Lag"
+            android:textSize="16sp"
+            android:visibility="@{attack.landingLag == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_notes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.notes}"
+            tools:text="Note: X"
+            android:textSize="16sp"
+            android:visibility="@{attack.notes == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_base_damage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.baseDamage}"
+            tools:text="X% Base Damage"
+            android:textSize="16sp"
+            android:visibility="@{attack.baseDamage == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_shield_lag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.shieldLag}"
+            tools:text="X Frames Shield Lag"
+            android:textSize="16sp"
+            android:visibility="@{attack.shieldLag == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_shield_stun"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.shieldStun}"
+            tools:text="Active on X-Y"
+            android:textSize="16sp"
+            android:visibility="@{attack.shieldStun == null ? View.GONE : View.VISIBLE}"
+            />
+
+        <TextView
+            android:id="@+id/move_active_frames"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{attack.activeFrames}"
+            tools:text="Active on X-Y"
+            android:textSize="16sp"
+            android:visibility="@{attack.activeFrames == null ? View.GONE : View.VISIBLE}"
+            />
+    </LinearLayout>
+
+</layout>
